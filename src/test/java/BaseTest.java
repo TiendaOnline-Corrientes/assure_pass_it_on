@@ -16,7 +16,7 @@ public abstract class BaseTest {
 
     @BeforeClass
     public static void settings() {
-        RestAssured.requestSpecification = setRequestSpecification("https://reqres.in/","/api");
+        RestAssured.requestSpecification = setRequestSpecification(ManageVariables.getHost(),ManageVariables.getPath());
     }
 
     private static RequestSpecification setRequestSpecification(String baseUri, String basePath) {

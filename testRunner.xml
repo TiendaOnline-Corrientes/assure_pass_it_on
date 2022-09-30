@@ -3,7 +3,7 @@
 <suite name="Testing API">
     <test name="API tests">
         <classes>
-            <class name="Example"/>
+            <class name="serialization"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

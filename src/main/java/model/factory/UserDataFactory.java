@@ -10,7 +10,7 @@ public class UserDataFactory {
 
 
     static Faker dummyData =  new Faker();
-    public static RequestUser missingData(){
+    public static RequestUser userWithMissingData(){
 
         return createRequestUser().
                 name(StringUtils.EMPTY).
@@ -18,14 +18,14 @@ public class UserDataFactory {
                 build();
     }
 
-    public static RequestUser nullInformation(){
+    public static RequestUser userWithNullInformation(){
         return createRequestUser().
                 name(null).
                 job(null).
                 build();
     }
 
-    public static RequestUser validData(){
+    public static RequestUser userWithValidData(){
         return createRequestUser().
                 name(dummyData.name().firstName()).
                 job(dummyData.job().field()).
