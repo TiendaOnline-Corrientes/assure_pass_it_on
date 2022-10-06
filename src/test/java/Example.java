@@ -10,7 +10,7 @@ public class Example {
 
 
 // get method
-    @Story("Reques")
+    @Story("Request")
     @Test
     public void getAnUser(){
         RestAssured
@@ -71,7 +71,6 @@ public class Example {
     public void loggingInformation(){
         RestAssured.
                 given().
-                log().headers().
                 when().
                 get("https://reqres.in/api/users/2").
                 then().

@@ -31,15 +31,6 @@ public class serialization extends BaseTest {
                 post("/users");
     }
 
-    @Test
-    public void isUserCorrectCreating() {
-        user.setName("marcos");
-        user.setJob("tester");
-        UserResponse userCreated = userTest.getUserResponse(user, "/users");
-        softassert.assertEquals(userCreated.getName(), "marcos");
-        softassert.assertEquals(user.getJob(), "tester");
-        softassert.assertAll();
-    }
 
     // patron builder
     @Story("User Creation-User with correct values")
@@ -52,7 +43,7 @@ public class serialization extends BaseTest {
 
         UserResponse userCreated = userTest.getUserResponse(user, ManageVariables.getPrimarilyPath());
         softassert.assertEquals(userCreated.getName(), "marcos");
-        softassert.assertEquals(user.getJob(), "tester");
+        softassert.assertEquals(user.getJob(), "ux");
         softassert.assertAll();
     }
 
@@ -72,7 +63,8 @@ public class serialization extends BaseTest {
         RequestUser user =  userWithNullInformation();
         UserResponse userCreated = userTest.getUserResponse(user, ManageVariables.getPrimarilyPath());
         softassert.assertEquals(userCreated.getName(), null);
-        softassert.assertEquals(user.getJob(), null);
+        softassert.assertEquals(userCreated.getJob(), null);
+        userTest.deleteAUserBaseOnID(userCreated.getId());
         softassert.assertAll();
     }
 }
